@@ -6,18 +6,18 @@ import Card from "@mui/material/Card";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKSocialButton from "components/MKSocialButton";
+// import MKSocialButton from "components/MKSocialButton";
 
 import { DefaultFooter } from "pages/Footer";
-import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
+// import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // Presentation page sections
-import Information from "pages/Home/sections/Information";
+// import Information from "pages/Home/sections/Information";
 // import DesignBlocks from "pages/Home/sections/DesignBlocks";
 // import Pages from "pages/Home/sections/Pages";
-import Testimonials from "pages/Home/sections/Testimonials";
+// import Testimonials from "pages/Home/sections/Testimonials";
 // import Download from "pages/Home/sections/Download";
-import Faqs from "pages/Home/sections/Faqs";
+// import Faqs from "pages/Home/sections/Faqs";
 
 // Home page components
 import BuiltByDevelopers from "pages/Home/components/BuiltByDevelopers";
@@ -29,7 +29,7 @@ import { footerRoutes } from "routes";
 import bgImage from "assets/images/bg-presentation.jpg";
 import NavbarDark from "components/CustomComponents/NavbarDark";
 import Table1 from "./sections/Table1";
-import { customerDevelopment, corpoateAffairs } from "./sections/data";
+import { customerDevelopment, corpoateAffairs, itComplaince } from "./sections/data";
 
 const legalTables = [
   {
@@ -37,8 +37,12 @@ const legalTables = [
     tableData: customerDevelopment,
   },
   {
-    tableName: "Corpoate Affairs",
+    tableName: "Corporate Affairs",
     tableData: corpoateAffairs,
+  },
+  {
+    tableName: "IT Compliance",
+    tableData: itComplaince,
   },
 ];
 
@@ -100,14 +104,11 @@ function Home() {
         <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
-        {legalTables.map((item) => {
-          return (
-            <Container sx={{ mb: 6 }}>
-              {" "}
-              <Table1 key={item.tableName} data={item.tableData} title={item.tableName} />
-            </Container>
-          );
-        })}
+        {legalTables.map((item) => (
+          <Container sx={{ mb: 6 }}>
+            <Table1 key={item.tableName} data={item.tableData} title={item.tableName} />
+          </Container>
+        ))}
         {/* <Information /> */}
         {/* <Faqs /> */}
         {/* <DesignBlocks /> */}
