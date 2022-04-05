@@ -12,7 +12,7 @@ const muiCache = createCache({
 });
 
 function Table1({ title, data }) {
-  const [responsive] = useState("vertical");
+  //   const [responsive] = useState("vertical");
   const [tableBodyHeight] = useState("100%");
   const [tableBodyMaxHeight] = useState("");
   const [searchBtn] = useState(true);
@@ -27,7 +27,16 @@ function Table1({ title, data }) {
     "Regulator",
     "Section",
     "Compliance Name",
-    "Compliance Description",
+    {
+      name: "Compliance Description",
+      options: {
+        setCellHeaderProps: () => ({
+          style: {
+            width: "50%",
+          },
+        }),
+      },
+    },
     "Task Frequency",
     "Penalty",
     "Criticality",
@@ -48,7 +57,7 @@ function Table1({ title, data }) {
     viewColumns: viewColumnBtn,
     filter: filterBtn,
     filterType: "dropdown",
-    responsive,
+    responsive: false,
     tableBodyHeight,
     tableBodyMaxHeight,
     onTableChange: (action, state) => {

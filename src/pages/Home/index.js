@@ -29,20 +29,29 @@ import { footerRoutes } from "routes";
 import bgImage from "assets/images/bg-presentation.jpg";
 import NavbarDark from "components/CustomComponents/NavbarDark";
 import Table1 from "./sections/Table1";
-import { customerDevelopment, corpoateAffairs, itComplaince } from "./sections/data";
+import {
+  customerDevelopment,
+  corpoateAffairs,
+  itComplaince,
+  legalRegulatory,
+} from "./sections/data";
 
 const legalTables = [
-  {
-    tableName: "Customer Development",
-    tableData: customerDevelopment,
-  },
   {
     tableName: "Corporate Affairs",
     tableData: corpoateAffairs,
   },
   {
+    tableName: "Customer Development",
+    tableData: customerDevelopment,
+  },
+  {
     tableName: "IT Compliance",
     tableData: itComplaince,
+  },
+  {
+    tableName: "Legal and Regulatory",
+    tableData: legalRegulatory,
   },
 ];
 
