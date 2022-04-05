@@ -31,6 +31,7 @@ import NavbarDark from "components/CustomComponents/NavbarDark";
 import Table1 from "./sections/Table1";
 import {
   customerDevelopment,
+  supplyChain,
   corpoateAffairs,
   itComplaince,
   legalRegulatory,
@@ -52,6 +53,10 @@ const legalTables = [
   {
     tableName: "Legal and Regulatory",
     tableData: legalRegulatory,
+  },
+  {
+    tableName: "Supply Chain",
+    tableData: supplyChain,
   },
 ];
 
