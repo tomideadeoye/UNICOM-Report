@@ -28,12 +28,14 @@ import { footerRoutes } from "routes";
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
 import NavbarDark from "components/CustomComponents/NavbarDark";
-import Table1 from "./sections/Table1";
+// import Table1 from "./sections/Table1";
+import MaterialTab from "./sections/material-tab";
 import {
   customerDevelopment,
   supplyChain,
   corpoateAffairs,
   itComplaince,
+  marketing,
   legalRegulatory,
 } from "./sections/data";
 
@@ -53,6 +55,10 @@ const legalTables = [
   {
     tableName: "Legal and Regulatory",
     tableData: legalRegulatory,
+  },
+  {
+    tableName: "Marketing",
+    tableData: marketing,
   },
   {
     tableName: "Supply Chain",
@@ -118,11 +124,18 @@ function Home() {
         <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container>
-        {legalTables.map((item) => (
+        <Container sx={{ mb: 6 }}>
+          {legalTables.map((item) => (
+            <Container sx={{ mb: 6 }}>
+              <MaterialTab key={item.tableName} data={item.tableData} title={item.tableName} />
+            </Container>
+          ))}
+        </Container>
+        {/* {legalTables.map((item) => (
           <Container sx={{ mb: 6 }}>
             <Table1 key={item.tableName} data={item.tableData} title={item.tableName} />
           </Container>
-        ))}
+        ))} */}
         {/* <Information /> */}
         {/* <Faqs /> */}
         {/* <DesignBlocks /> */}
